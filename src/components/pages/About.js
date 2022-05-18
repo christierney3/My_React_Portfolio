@@ -18,12 +18,12 @@ export default function About() {
       </div>
       <div className='col-sm-6 about-photo'>
         <div className='card mb-3'>
-        <img src={`${process.env.PUBLIC_URL}/images/dewtour.JPG`} className="card-img-top" alt="Killington Dew Tour" />
+        <img src={`${process.env.PUBLIC_URL}/images/dewtour.jpg`} className="card-img-top" alt="Killington Dew Tour" />
         </div>
       </div>
       <div className='col-sm-6 about-photo'>
         <div className='card mb-3'>
-        <img src={`${process.env.PUBLIC_URL}/images/european-open.JPG`} className="card-img-top" alt="Killington Dew Tour" />
+        <img src={`${process.env.PUBLIC_URL}/images/european-open.jpg`} className="card-img-top" alt="Burton European Open" />
         </div>
       </div>
     </section>

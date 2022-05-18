@@ -1,0 +1,103 @@
+*{
+    background-color: black;
+    color: whitesmoke;
+}
+
+body {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.card-text, .card-title{
+    color: whitesmoke;
+}
+
+.intro-pic {
+    display: flex;
+    margin-top: 1.75rem;
+    justify-content: center;
+}
+
+.intro {
+    display: flex;
+    flex-wrap: wrap;   
+    margin-top: 1.75rem;
+    justify-content: center;
+}
+
+main {
+    padding-top: 6rem;
+}
+
+.i {
+    margin-left: 10%;
+}
+
+.am {
+    margin-left: 20%;
+}
+
+.chris {
+    margin-left: 30%;
+}
+
+.tierney {
+    margin-left: 40%;
+}
+
+#contact {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.contact-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+footer {
+    position:fixed;
+    bottom:0px;
+    display:block;  
+    width:100%;
+    margin-top: 120px
+}
+
+.all-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 25px;
+}
+
+.about-me-p {
+    margin-top: 100px;
+    max-width: 60%;
+    margin-left: 23%;
+    margin-right: 27%;
+}
+
+.about-photo {
+    display: flex;
+    justify-content: center;
+    margin-left: 23%;
+    margin-right: 27%;
+    margin-top: 45px;
+}
+
+.valid-email {
+    margin-left: 10px;
+    margin-top: 6px;
+}
+
+.contact-form {
+    width: 90%;
+}
+
+form {
+    display:block;
+    margin-left: 17%;
+
+}

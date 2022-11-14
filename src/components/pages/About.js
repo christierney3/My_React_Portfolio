@@ -13,7 +13,7 @@ export default function About() {
         The drive and competitor's mentality I learned while in the sport has helped me in many other aspects of my life when I decided to leave it.
       </p>
       <p>
-        Although my work in web development is not as polished as it will be in ~1 month, I am confident my work would be a valued addition to any web developing company.
+        After finishing the University of Denver's Full Stack Web Development Bootcamp, I am confident my work would be a valued addition to any web developing company.
       </p>
       </div>
       <div className='col-sm-6 about-photo'>

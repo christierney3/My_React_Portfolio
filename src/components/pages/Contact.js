@@ -1,45 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import validator from 'validator';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
+
+const SERVICE_ID = "service_dset5tn";
+const TEMPLATE_ID = "template_8timkug";
+const USER_ID = "NnZz8Dzly6IVePi4S";
 
 export default function Contact(props) {
 
-  class Mouse extends React.Component {
-    constructor(props) {
-      super(props);
-      this.handleMouseMove = this.handleMouseMove.bind(this);
-      this.state = { x: 0, y: 0 };
-    }
+  // class Mouse extends React.Component {
+  //   constructor(props) {
+  //     super(props);
+  //     this.handleMouseMove = this.handleMouseMove.bind(this);
+  //     this.state = { x: 0, y: 0 };
+  //   }
 
-    handleMouseMove(e) {
-      this.setState({
-        x: e.clientX,
-        y: e.clientY
-      });
-    }
-  }
+  //   handleMouseMove(e) {
+  //     this.setState({
+  //       x: e.clientX,
+  //       y: e.clientY
+  //     });
+  //   }
+  // }
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const form = useRef();
 
  
   const handleSubmit = (e) => {
     e.preventDefault();
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, USER_ID)
+      .then((result) => {
+        console.log(result.text);
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent Successfully'
+        })
+      }, (error) => {
+        console.log(error.text);
+        Swal.fire({
+          icon: 'error',
+          title: 'Ooops, something went wrong',
+          text: error.text,
+        })
+      });
+    // setName('');
+    // setEmail('');
+    // setMessage('');
 
-    setName('');
-    setEmail('');
-    setMessage('');
-
-    console.log('Form submitted!');
-    alert('Form submitted!');
+    // console.log('Form submitted!');
+    // alert('Form submitted!');
   };
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
     switch (name) {
-      case 'name':
+      case 'user_name':
         return setName(value);
-      case 'email':
+      case 'user_email':
         return setEmail(value);
       case 'message':
         return setMessage(value);
@@ -69,14 +91,14 @@ export default function Contact(props) {
   return (
     <section class='container'>
       <h1 className='all-header' id='contact-header'>Contact</h1>
-      <form>
+      <form ref={form}>
         <label className='contact-form'>
           Name:
           <br/>
           <input 
             type='text' 
             className='contact-form' 
-            name='name' 
+            name='user_name' 
             value={name}
             onChange={handleInputChange}
             />
@@ -88,9 +110,9 @@ export default function Contact(props) {
           <input 
             type="text" 
             className='contact-form' 
-            id="userEmail" 
+            id="user_email" 
             onChange={bothFncts}
-            name='email'
+            name='user_email'
             value={email}
             />
         </label>
@@ -118,7 +140,7 @@ export default function Contact(props) {
         <button 
         type='submit'
         className='btn btn-info'
-        value='Submit'
+        value='Send'
         onClick={handleSubmit}>Submit
         </button>
       </form>
